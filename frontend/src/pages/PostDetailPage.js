@@ -29,7 +29,7 @@ const PostDetailPage = ({ match }) => {
         <h1 className="title single-title entry-title">
           {post.title ? post.title : "PyTorch: Deep Learning and Artificial Intelligence"}
         </h1>
-        {post.content && <div>{post.content}</div>}
+        {post.content && <div dangerouslySetInnerHTML={{__html: post.content}}></div>}
       </div>
     </div>
   );
