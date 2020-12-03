@@ -7,16 +7,16 @@ const PostCard = ({ post }) => {
     <div className="post-content">
       <div className="post-cat">
         <div className="post-cat-list">
-          <Link className="hover-flip-item-wrapper" to={`post/${post.id}`}>
+          <Link className="hover-flip-item-wrapper" to={`posts/${post._id}`}>
             <span className="hover-flip-item">
-              <span data-text="FOOD">FOOD</span>
+              <span data-text="FOOD">{post.category}</span>
             </span>
           </Link>
         </div>
       </div>
       <h4 className="title mt-2">
-        <Link href="post-details.html" to={`post/${post.id}`}>
-          Security isn’t just a technology problem it’s about design, too{" "}
+        <Link href="post-details.html" to={`posts/${post._id}`}>
+          {post.title}
         </Link>
       </h4>
     </div>
