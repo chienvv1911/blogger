@@ -22,7 +22,6 @@ router.get('/:id', expressAsyncHandler(async (req, res) => {
 }))
 
 router.route("/create").post((req, res) => {
-    console.log('go here', req.body)
     //Retrieve data for post
     const { title, content } = req.body;
     //Create a new Post and save it to DB

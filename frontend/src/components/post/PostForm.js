@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import CKEditor from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import sanitizeHtml from "sanitize-html";
-
+import { Editor } from "@tinymce/tinymce-react";
 class PostForm extends Component {
   constructor(props) {
     super(props);
@@ -30,8 +28,7 @@ class PostForm extends Component {
   }
 
   handleEditorChange = (event, editor) => {
-    const data = editor.getData();
-    this.setState({ content: data });
+    this.setState({ content: event });
   };
 
   handleChange = (event) => {
@@ -54,26 +51,23 @@ class PostForm extends Component {
     };
     let { match } = this.props;
     if (match && match.params && match.params.id) {
-        axios
+      axios
         .post(`/api/posts/edit/${match.params.id}`, Blog)
         .then((res) => (window.location = "/posts"))
         .catch((err) => console.log(err));
     } else {
-        axios
+      axios
         .post(`/api/posts/create/`, Blog)
         .then((res) => (window.location = "/posts"))
         .catch((err) => console.log(err));
     }
-   
   };
 
   render() {
     return (
       <div>
         <div className="new-post">
-          <h1>
-            Create New Blog Post
-          </h1>
+          <h1>Create New Blog Post</h1>
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label className="new-title">Title: </label>
@@ -88,26 +82,22 @@ class PostForm extends Component {
               />
             </div>
             <div>
-              <CKEditor
-                editor={ClassicEditor}
-                onChange={this.handleEditorChange}
-                config={{
-                  placeholder: "Start typing your blog post here...",
-                  toolbar: [
-                    "Heading",
-                    "|",
-                    "Bold",
-                    "Italic",
-                    "Link",
-                    "NumberedList",
-                    "BulletedList",
-                    "|",
-                    "BlockQuote",
-                    "MediaEmbed",
-                    "Undo",
-                    "Redo",
+              <Editor
+                initialValue="<p>This is the initial content of the editor</p>"
+                init={{
+                  height: 500,
+                  menubar: false,
+                  plugins: [
+                    "codesample advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table paste code help wordcount",
                   ],
+                  toolbar:
+                    "codesample | undo redo | formatselect | bold italic backcolor | \
+             alignleft aligncenter alignright alignjustify | \
+             bullist numlist outdent indent | removeformat | help",
                 }}
+                onEditorChange={this.handleEditorChange}
               />
             </div>
             <br />
