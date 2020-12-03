@@ -1,0 +1,11 @@
+.main-header {
+    background: #191b26;
+    padding-top: 12px;
+}
+
+.main-header, .main-header a {
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+}

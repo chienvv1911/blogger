@@ -1,0 +1,10 @@
+@import './assets/css/bootstrap.min.css';
+
+body {
+  font-family: Poppins;
+}
+
+main {
+  min-height: 90vh;
+  margin-top: 24px;
+}

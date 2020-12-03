@@ -1,0 +1,18 @@
+.category {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    background-color: #ef5b61;
+    line-height: 30px;
+    display: inline-block;
+    padding: 0 28px;
+    border-radius: 15px;
+    margin-right: 5px;
+}
+
+.post-detail h1 {
+    line-height: 56px;
+    margin-bottom: 25px;
+    margin-top: 16px;
+}

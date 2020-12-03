@@ -1,0 +1,26 @@
+#site-footer {
+    background: #191b26;
+}
+
+.copyrights {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 30px;
+    padding-right: 0;
+    padding-bottom: 30px;
+    padding-left: 0;
+    border: none;
+}
+
+#copyright-note, #copyright-note a {
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+#copyright-note p {
+    margin: 0 auto;
+}
