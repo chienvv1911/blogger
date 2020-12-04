@@ -16,3 +16,7 @@
     margin-bottom: 25px;
     margin-top: 16px;
 }
+
+.post-detail p strong {
+    font-weight: 700;
+}

@@ -53,12 +53,12 @@ class PostForm extends Component {
     if (match && match.params && match.params.id) {
       axios
         .post(`/api/posts/edit/${match.params.id}`, Blog)
-        .then((res) => (window.location = "/posts"))
+        .then((res) => (window.location = "/"))
         .catch((err) => console.log(err));
     } else {
       axios
         .post(`/api/posts/create/`, Blog)
-        .then((res) => (window.location = "/posts"))
+        .then((res) => (window.location = "/"))
         .catch((err) => console.log(err));
     }
   };
